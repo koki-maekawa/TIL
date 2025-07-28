@@ -4,14 +4,14 @@
 
 year=$(date +%Y)
 month=$(date +%m)
+day=$(date +%d)
 today_formatted=$(date +%Y-%m-%d)
-today_filename=$(date +%Y%m%d)
 
 # ディレクトリ作成
 dir_path="${year}/${month}"
 mkdir -p "$dir_path"
 
-daily_file="${dir_path}/${today_filename}.md"
+daily_file="${dir_path}/${day}.md"
 
 if [ ! -f "$daily_file" ]; then
     cp templates/daily-template.md "$daily_file"
